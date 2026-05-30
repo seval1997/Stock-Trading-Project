@@ -6,9 +6,38 @@ on:
       - main   # or whichever branch you target for PRs
 
 jobs:
+
+  pr-title-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR title
+        run: |
+          echo "Checking PR title: ${{ github.event.pull_request.title }}"
+          TITLE="${{ github.event.pull_request.title }}"
+
+          # Regex for tag + number + colon + context
+          if [[ ! "$TITLE" =~ ^(Feature|Fix|Enhancement|Docs|Test|Chore|Build|Security|Performance|Release)[[:space:]]*-[[:space:]]*[0-9]{3,4}[[:space:]]*:[[:space:]].+$ ]]; then
+            echo "Invalid PR title format."
+            echo "Title must start with one of the approved tags, followed by a number (001–9999), a colon, and a context description."
+            echo "Examples: 'Feature - 001 : Add login API', 'Fix - 045 : Resolve timeout bug'"
+            exit 1
+          fi
+
+          # Extract context after colon
+          CONTEXT=$(echo "$TITLE" | sed -E 's/^(Feature|Fix|Enhancement|Docs|Test|Chore|Build|Security|Performance|Release)[[:space:]]*-[[:space:]]*[0-9]{3,4}[[:space:]]*:[[:space:]]*(.*)$/\2/')
+
+          LEN=${#CONTEXT}
+          if [ $LEN -lt 20 ] || [ $LEN -gt 120 ]; then
+            echo "Invalid PR context length."
+            echo "Context must be between 20 and 120 characters."
+            echo "Current length: $LEN"
+            exit 1
+          fi
+
+          echo "PR title is valid."
+
   lint-and-test:
     runs-on: ubuntu-latest
-
     steps:
       # Checkout the code
       - name: Checkout repository
