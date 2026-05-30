@@ -1,0 +1,497 @@
+2026-05-30 10:45:17,543 - src.utils - INFO - Logging initialized
+2026-05-30 10:45:17,544 - src.database - INFO - Database connected: /Users/sevalpatel/Documents/Stock Trading Project/Stock-Trading-Project/data/stocks.db
+2026-05-30 10:45:17,549 - src.utils - INFO - Database initialized
+2026-05-30 10:45:17,549 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing TCS.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for TCS.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for TCS.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed TCS.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing INFY.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for INFY.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for INFY.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed INFY.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing WIPRO.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for WIPRO.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for WIPRO.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed WIPRO.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing RELIANCE.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for RELIANCE.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for RELIANCE.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed RELIANCE.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing SBIN.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for SBIN.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for SBIN.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed SBIN.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing HDFC.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for HDFC.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for HDFC.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed HDFC.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing ITC.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for ITC.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for ITC.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed ITC.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing MARUTI.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,549 - src.data_fetcher - ERROR - Error fetching data for MARUTI.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,549 - src.data_fetcher - WARNING - No data to save for MARUTI.NS
+2026-05-30 10:45:17,549 - src.utils - INFO - Successfully processed MARUTI.NS: 0 records saved
+2026-05-30 10:45:17,549 - src.utils - INFO - Processing BAJAJFINSV.NS...
+2026-05-30 10:45:17,549 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,550 - src.data_fetcher - ERROR - Error fetching data for BAJAJFINSV.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,550 - src.data_fetcher - WARNING - No data to save for BAJAJFINSV.NS
+2026-05-30 10:45:17,550 - src.utils - INFO - Successfully processed BAJAJFINSV.NS: 0 records saved
+2026-05-30 10:45:17,550 - src.utils - INFO - Processing NESTLEIND.NS...
+2026-05-30 10:45:17,550 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:17,550 - src.data_fetcher - ERROR - Error fetching data for NESTLEIND.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:17,550 - src.data_fetcher - WARNING - No data to save for NESTLEIND.NS
+2026-05-30 10:45:17,550 - src.utils - INFO - Successfully processed NESTLEIND.NS: 0 records saved
+2026-05-30 10:45:17,550 - src.utils - INFO - All Indian stocks processed successfully!
+2026-05-30 10:45:17,550 - src.utils - INFO - Data stored in: data/stocks.db
+2026-05-30 10:45:17,550 - src.database - INFO - Database connection closed
+2026-05-30 10:45:17,550 - src.utils - INFO - Application finished
+2026-05-30 10:45:37,680 - src.utils - INFO - Logging initialized
+2026-05-30 10:45:37,681 - src.database - INFO - Database connected: /Users/sevalpatel/Documents/Stock Trading Project/Stock-Trading-Project/data/stocks.db
+2026-05-30 10:45:37,682 - src.utils - INFO - Database initialized
+2026-05-30 10:45:37,682 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing TCS.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for TCS.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for TCS.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed TCS.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing INFY.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for INFY.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for INFY.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed INFY.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing WIPRO.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for WIPRO.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for WIPRO.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed WIPRO.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing RELIANCE.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for RELIANCE.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for RELIANCE.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed RELIANCE.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing SBIN.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for SBIN.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for SBIN.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed SBIN.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing HDFC.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for HDFC.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for HDFC.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed HDFC.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing ITC.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for ITC.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for ITC.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed ITC.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing MARUTI.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for MARUTI.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for MARUTI.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed MARUTI.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing BAJAJFINSV.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for BAJAJFINSV.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for BAJAJFINSV.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed BAJAJFINSV.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - Processing NESTLEIND.NS...
+2026-05-30 10:45:37,682 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:45:37,682 - src.data_fetcher - ERROR - Error fetching data for NESTLEIND.NS: __init__() got an unexpected keyword argument 'timeout'
+2026-05-30 10:45:37,682 - src.data_fetcher - WARNING - No data to save for NESTLEIND.NS
+2026-05-30 10:45:37,682 - src.utils - INFO - Successfully processed NESTLEIND.NS: 0 records saved
+2026-05-30 10:45:37,682 - src.utils - INFO - All Indian stocks processed successfully!
+2026-05-30 10:45:37,682 - src.utils - INFO - Data stored in: data/stocks.db
+2026-05-30 10:45:37,683 - src.database - INFO - Database connection closed
+2026-05-30 10:45:37,683 - src.utils - INFO - Application finished
+2026-05-30 10:48:05,413 - src.utils - INFO - Logging initialized
+2026-05-30 10:48:05,413 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 10:48:05,413 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 10:48:05,413 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:06,204 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 10:48:06,204 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 10:48:06,211 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 10:48:06,211 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:06,545 - src.data_fetcher - INFO - Successfully fetched 250 records for INFY.NS
+2026-05-30 10:48:06,546 - src.utils - INFO - Successfully fetched INFY.NS: 250 records
+2026-05-30 10:48:06,551 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 10:48:06,551 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:06,841 - src.data_fetcher - INFO - Successfully fetched 250 records for WIPRO.NS
+2026-05-30 10:48:06,841 - src.utils - INFO - Successfully fetched WIPRO.NS: 250 records
+2026-05-30 10:48:06,847 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 10:48:06,847 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:07,097 - src.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 10:48:07,097 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 10:48:07,101 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 10:48:07,102 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:07,472 - src.data_fetcher - INFO - Successfully fetched 249 records for SBIN.NS
+2026-05-30 10:48:07,472 - src.utils - INFO - Successfully fetched SBIN.NS: 249 records
+2026-05-30 10:48:07,477 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 10:48:07,478 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:09,426 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 10:48:09,427 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 10:48:09,427 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 10:48:09,427 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 10:48:09,427 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:09,699 - src.data_fetcher - INFO - Successfully fetched 250 records for ITC.NS
+2026-05-30 10:48:09,699 - src.utils - INFO - Successfully fetched ITC.NS: 250 records
+2026-05-30 10:48:09,703 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 10:48:09,703 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:10,027 - src.data_fetcher - INFO - Successfully fetched 249 records for MARUTI.NS
+2026-05-30 10:48:10,028 - src.utils - INFO - Successfully fetched MARUTI.NS: 249 records
+2026-05-30 10:48:10,033 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 10:48:10,033 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:10,282 - src.data_fetcher - INFO - Successfully fetched 250 records for BAJAJFINSV.NS
+2026-05-30 10:48:10,283 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 250 records
+2026-05-30 10:48:10,288 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 10:48:10,288 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:48:10,547 - src.data_fetcher - INFO - Successfully fetched 250 records for NESTLEIND.NS
+2026-05-30 10:48:10,547 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 250 records
+2026-05-30 10:48:10,552 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 10:55:24,118 - src.utils - INFO - Logging initialized
+2026-05-30 10:55:24,118 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 10:55:24,118 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 10:55:24,118 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:24,761 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 10:55:24,761 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 10:55:24,766 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 10:55:24,766 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:24,916 - src.data_fetcher - INFO - Successfully fetched 250 records for INFY.NS
+2026-05-30 10:55:24,916 - src.utils - INFO - Successfully fetched INFY.NS: 250 records
+2026-05-30 10:55:24,920 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 10:55:24,921 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:25,073 - src.data_fetcher - INFO - Successfully fetched 250 records for WIPRO.NS
+2026-05-30 10:55:25,073 - src.utils - INFO - Successfully fetched WIPRO.NS: 250 records
+2026-05-30 10:55:25,078 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 10:55:25,078 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:25,240 - src.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 10:55:25,241 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 10:55:25,246 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 10:55:25,246 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:25,465 - src.data_fetcher - INFO - Successfully fetched 249 records for SBIN.NS
+2026-05-30 10:55:25,465 - src.utils - INFO - Successfully fetched SBIN.NS: 249 records
+2026-05-30 10:55:25,470 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 10:55:25,470 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:26,933 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 10:55:26,934 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 10:55:26,934 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 10:55:26,934 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 10:55:26,935 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:27,090 - src.data_fetcher - INFO - Successfully fetched 250 records for ITC.NS
+2026-05-30 10:55:27,090 - src.utils - INFO - Successfully fetched ITC.NS: 250 records
+2026-05-30 10:55:27,095 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 10:55:27,095 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:27,294 - src.data_fetcher - INFO - Successfully fetched 249 records for MARUTI.NS
+2026-05-30 10:55:27,294 - src.utils - INFO - Successfully fetched MARUTI.NS: 249 records
+2026-05-30 10:55:27,300 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 10:55:27,300 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:27,439 - src.data_fetcher - INFO - Successfully fetched 250 records for BAJAJFINSV.NS
+2026-05-30 10:55:27,439 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 250 records
+2026-05-30 10:55:27,443 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 10:55:27,443 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:27,582 - src.data_fetcher - INFO - Successfully fetched 250 records for NESTLEIND.NS
+2026-05-30 10:55:27,583 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 250 records
+2026-05-30 10:55:27,586 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 10:55:46,013 - src.utils - INFO - Logging initialized
+2026-05-30 10:55:46,013 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 10:55:46,013 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 10:55:46,013 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:46,634 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 10:55:46,634 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 10:55:46,639 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 10:55:46,639 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:46,804 - src.data_fetcher - INFO - Successfully fetched 250 records for INFY.NS
+2026-05-30 10:55:46,805 - src.utils - INFO - Successfully fetched INFY.NS: 250 records
+2026-05-30 10:55:46,809 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 10:55:46,809 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:47,016 - src.data_fetcher - INFO - Successfully fetched 250 records for WIPRO.NS
+2026-05-30 10:55:47,017 - src.utils - INFO - Successfully fetched WIPRO.NS: 250 records
+2026-05-30 10:55:47,022 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 10:55:47,022 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:47,182 - src.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 10:55:47,182 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 10:55:47,187 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 10:55:47,187 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:47,333 - src.data_fetcher - INFO - Successfully fetched 249 records for SBIN.NS
+2026-05-30 10:55:47,333 - src.utils - INFO - Successfully fetched SBIN.NS: 249 records
+2026-05-30 10:55:47,338 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 10:55:47,338 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:48,691 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 10:55:48,692 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 10:55:48,692 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 10:55:48,692 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 10:55:48,692 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:48,840 - src.data_fetcher - INFO - Successfully fetched 250 records for ITC.NS
+2026-05-30 10:55:48,841 - src.utils - INFO - Successfully fetched ITC.NS: 250 records
+2026-05-30 10:55:48,845 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 10:55:48,846 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:48,991 - src.data_fetcher - INFO - Successfully fetched 249 records for MARUTI.NS
+2026-05-30 10:55:48,991 - src.utils - INFO - Successfully fetched MARUTI.NS: 249 records
+2026-05-30 10:55:48,996 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 10:55:48,997 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:49,132 - src.data_fetcher - INFO - Successfully fetched 250 records for BAJAJFINSV.NS
+2026-05-30 10:55:49,132 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 250 records
+2026-05-30 10:55:49,137 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 10:55:49,137 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 10:55:49,272 - src.data_fetcher - INFO - Successfully fetched 250 records for NESTLEIND.NS
+2026-05-30 10:55:49,272 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 250 records
+2026-05-30 10:55:49,276 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 11:00:14,037 - src.utils - INFO - Logging initialized
+2026-05-30 11:00:14,037 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 11:00:14,037 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 11:00:14,037 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:14,766 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 11:00:14,766 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 11:00:14,771 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 11:00:14,771 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:15,005 - src.data_fetcher - INFO - Successfully fetched 250 records for INFY.NS
+2026-05-30 11:00:15,006 - src.utils - INFO - Successfully fetched INFY.NS: 250 records
+2026-05-30 11:00:15,011 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 11:00:15,011 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:15,175 - src.data_fetcher - INFO - Successfully fetched 250 records for WIPRO.NS
+2026-05-30 11:00:15,175 - src.utils - INFO - Successfully fetched WIPRO.NS: 250 records
+2026-05-30 11:00:15,181 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 11:00:15,181 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:15,408 - src.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 11:00:15,408 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 11:00:15,413 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 11:00:15,413 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:15,557 - src.data_fetcher - INFO - Successfully fetched 249 records for SBIN.NS
+2026-05-30 11:00:15,557 - src.utils - INFO - Successfully fetched SBIN.NS: 249 records
+2026-05-30 11:00:15,563 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 11:00:15,563 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:17,001 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 11:00:17,002 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 11:00:17,002 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 11:00:17,003 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 11:00:17,003 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:17,228 - src.data_fetcher - INFO - Successfully fetched 250 records for ITC.NS
+2026-05-30 11:00:17,228 - src.utils - INFO - Successfully fetched ITC.NS: 250 records
+2026-05-30 11:00:17,232 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 11:00:17,232 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:17,371 - src.data_fetcher - INFO - Successfully fetched 249 records for MARUTI.NS
+2026-05-30 11:00:17,371 - src.utils - INFO - Successfully fetched MARUTI.NS: 249 records
+2026-05-30 11:00:17,375 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 11:00:17,375 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:17,502 - src.data_fetcher - INFO - Successfully fetched 250 records for BAJAJFINSV.NS
+2026-05-30 11:00:17,502 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 250 records
+2026-05-30 11:00:17,507 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 11:00:17,507 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:00:17,709 - src.data_fetcher - INFO - Successfully fetched 250 records for NESTLEIND.NS
+2026-05-30 11:00:17,709 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 250 records
+2026-05-30 11:00:17,713 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 11:01:19,838 - src.utils - INFO - Logging initialized
+2026-05-30 11:01:19,839 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 11:01:19,839 - src.utils - INFO - Fetching data for TCS.BOs...
+2026-05-30 11:01:19,839 - src.data_fetcher - INFO - Fetching data for TCS.BOs from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:01:21,416 - yfinance - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: TCS.BOS"}}}
+2026-05-30 11:01:22,050 - yfinance - ERROR - $TCS.BOS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 11:01:22,051 - src.data_fetcher - WARNING - No data retrieved for TCS.BOs. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 11:01:22,051 - src.utils - WARNING - No data retrieved for TCS.BOs
+2026-05-30 11:01:22,052 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 11:01:34,818 - src.utils - INFO - Logging initialized
+2026-05-30 11:01:34,818 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 11:01:34,818 - src.utils - INFO - Fetching data for TCS.BO...
+2026-05-30 11:01:34,818 - src.data_fetcher - INFO - Fetching data for TCS.BO from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:01:35,586 - src.data_fetcher - INFO - Successfully fetched 247 records for TCS.BO
+2026-05-30 11:01:35,586 - src.utils - INFO - Successfully fetched TCS.BO: 247 records
+2026-05-30 11:01:35,591 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 11:05:13,094 - src.utils - INFO - Logging initialized
+2026-05-30 11:05:13,094 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 11:05:13,094 - src.utils - INFO - Fetching data for TCS.BO...
+2026-05-30 11:05:13,094 - src.data_fetcher - INFO - Fetching data for TCS.BO from yfinance (period: 1y, interval: 1d)
+2026-05-30 11:05:13,743 - src.data_fetcher - INFO - Successfully fetched 247 records for TCS.BO
+2026-05-30 11:05:13,743 - src.utils - INFO - Successfully fetched TCS.BO: 247 records
+2026-05-30 11:05:13,748 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 17:43:05,991 - src.utils - INFO - Logging initialized
+2026-05-30 17:43:05,995 - src.crypto.data_fetcher - INFO - Connected to binance exchange via CCXT
+2026-05-30 17:43:05,995 - src.crypto.data_fetcher - INFO - Fetching live crypto prices for BTC/USDT every 1s for 10s
+2026-05-30 17:48:12,618 - src.utils - INFO - Logging initialized
+2026-05-30 17:48:12,619 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:50:05,955 - src.utils - INFO - Logging initialized
+2026-05-30 17:50:05,955 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:51:34,315 - src.utils - INFO - Logging initialized
+2026-05-30 17:51:34,316 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:53:02,026 - src.utils - INFO - Logging initialized
+2026-05-30 17:53:02,026 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:53:02,026 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 17:53:02,026 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:02,706 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 17:53:02,706 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 17:53:02,711 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 17:53:02,712 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:02,869 - src.data_fetcher - INFO - Successfully fetched 250 records for INFY.NS
+2026-05-30 17:53:02,870 - src.utils - INFO - Successfully fetched INFY.NS: 250 records
+2026-05-30 17:53:02,875 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 17:53:02,875 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:03,027 - src.data_fetcher - INFO - Successfully fetched 250 records for WIPRO.NS
+2026-05-30 17:53:03,027 - src.utils - INFO - Successfully fetched WIPRO.NS: 250 records
+2026-05-30 17:53:03,033 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 17:53:03,033 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:03,191 - src.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 17:53:03,192 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 17:53:03,197 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 17:53:03,197 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:03,356 - src.data_fetcher - INFO - Successfully fetched 249 records for SBIN.NS
+2026-05-30 17:53:03,356 - src.utils - INFO - Successfully fetched SBIN.NS: 249 records
+2026-05-30 17:53:03,362 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 17:53:03,362 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:04,879 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1y) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 17:53:04,879 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 17:53:04,880 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 17:53:04,880 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 17:53:04,880 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:05,099 - src.data_fetcher - INFO - Successfully fetched 250 records for ITC.NS
+2026-05-30 17:53:05,099 - src.utils - INFO - Successfully fetched ITC.NS: 250 records
+2026-05-30 17:53:05,102 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 17:53:05,102 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:05,248 - src.data_fetcher - INFO - Successfully fetched 249 records for MARUTI.NS
+2026-05-30 17:53:05,248 - src.utils - INFO - Successfully fetched MARUTI.NS: 249 records
+2026-05-30 17:53:05,252 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 17:53:05,252 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:05,389 - src.data_fetcher - INFO - Successfully fetched 250 records for BAJAJFINSV.NS
+2026-05-30 17:53:05,389 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 250 records
+2026-05-30 17:53:05,393 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 17:53:05,393 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 17:53:05,536 - src.data_fetcher - INFO - Successfully fetched 250 records for NESTLEIND.NS
+2026-05-30 17:53:05,536 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 250 records
+2026-05-30 17:53:05,541 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 17:54:42,630 - src.utils - INFO - Logging initialized
+2026-05-30 17:54:42,630 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:54:42,630 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 17:54:42,630 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:43,274 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 17:54:43,274 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 17:54:43,279 - src.utils - INFO - Fetching data for INFY.NS...
+2026-05-30 17:54:43,279 - src.data_fetcher - INFO - Fetching data for INFY.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:43,397 - src.data_fetcher - INFO - Successfully fetched 25 records for INFY.NS
+2026-05-30 17:54:43,397 - src.utils - INFO - Successfully fetched INFY.NS: 25 records
+2026-05-30 17:54:43,401 - src.utils - INFO - Fetching data for WIPRO.NS...
+2026-05-30 17:54:43,401 - src.data_fetcher - INFO - Fetching data for WIPRO.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:43,520 - src.data_fetcher - INFO - Successfully fetched 25 records for WIPRO.NS
+2026-05-30 17:54:43,520 - src.utils - INFO - Successfully fetched WIPRO.NS: 25 records
+2026-05-30 17:54:43,525 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 17:54:43,525 - src.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:43,653 - src.data_fetcher - INFO - Successfully fetched 25 records for RELIANCE.NS
+2026-05-30 17:54:43,653 - src.utils - INFO - Successfully fetched RELIANCE.NS: 25 records
+2026-05-30 17:54:43,658 - src.utils - INFO - Fetching data for SBIN.NS...
+2026-05-30 17:54:43,658 - src.data_fetcher - INFO - Fetching data for SBIN.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:43,782 - src.data_fetcher - INFO - Successfully fetched 25 records for SBIN.NS
+2026-05-30 17:54:43,782 - src.utils - INFO - Successfully fetched SBIN.NS: 25 records
+2026-05-30 17:54:43,786 - src.utils - INFO - Fetching data for HDFC.NS...
+2026-05-30 17:54:43,786 - src.data_fetcher - INFO - Fetching data for HDFC.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:45,208 - yfinance - ERROR - $HDFC.NS: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-30 17:54:45,208 - src.data_fetcher - WARNING - No data retrieved for HDFC.NS. Check if symbol is correct (e.g., TCS.NS, INFY.NS)
+2026-05-30 17:54:45,209 - src.utils - WARNING - No data retrieved for HDFC.NS
+2026-05-30 17:54:45,209 - src.utils - INFO - Fetching data for ITC.NS...
+2026-05-30 17:54:45,209 - src.data_fetcher - INFO - Fetching data for ITC.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:45,330 - src.data_fetcher - INFO - Successfully fetched 25 records for ITC.NS
+2026-05-30 17:54:45,330 - src.utils - INFO - Successfully fetched ITC.NS: 25 records
+2026-05-30 17:54:45,336 - src.utils - INFO - Fetching data for MARUTI.NS...
+2026-05-30 17:54:45,336 - src.data_fetcher - INFO - Fetching data for MARUTI.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:45,455 - src.data_fetcher - INFO - Successfully fetched 25 records for MARUTI.NS
+2026-05-30 17:54:45,455 - src.utils - INFO - Successfully fetched MARUTI.NS: 25 records
+2026-05-30 17:54:45,460 - src.utils - INFO - Fetching data for BAJAJFINSV.NS...
+2026-05-30 17:54:45,460 - src.data_fetcher - INFO - Fetching data for BAJAJFINSV.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:45,578 - src.data_fetcher - INFO - Successfully fetched 25 records for BAJAJFINSV.NS
+2026-05-30 17:54:45,578 - src.utils - INFO - Successfully fetched BAJAJFINSV.NS: 25 records
+2026-05-30 17:54:45,582 - src.utils - INFO - Fetching data for NESTLEIND.NS...
+2026-05-30 17:54:45,582 - src.data_fetcher - INFO - Fetching data for NESTLEIND.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:54:45,791 - src.data_fetcher - INFO - Successfully fetched 25 records for NESTLEIND.NS
+2026-05-30 17:54:45,792 - src.utils - INFO - Successfully fetched NESTLEIND.NS: 25 records
+2026-05-30 17:54:45,796 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 17:55:16,973 - src.utils - INFO - Logging initialized
+2026-05-30 17:55:16,973 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:55:16,974 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 17:55:16,974 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 17:55:17,618 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 17:55:17,618 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 17:55:17,622 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 17:59:40,905 - src.utils - INFO - Logging initialized
+2026-05-30 17:59:40,906 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 17:59:40,906 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 17:59:40,906 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 17:59:41,829 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 17:59:41,829 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 17:59:41,834 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:00:50,914 - src.utils - INFO - Logging initialized
+2026-05-30 18:00:50,914 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:00:50,914 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:00:50,915 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 18:00:51,671 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 18:00:51,671 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 18:00:51,677 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:06:33,641 - src.utils - INFO - Logging initialized
+2026-05-30 18:06:33,641 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:06:33,641 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:06:33,641 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 18:06:34,305 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 18:06:34,305 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 18:06:34,700 - src.utils - ERROR - Error in main: name 'symbol' is not defined
+2026-05-30 18:07:09,793 - src.utils - INFO - Logging initialized
+2026-05-30 18:07:09,794 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:07:09,794 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:07:09,794 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 18:07:10,807 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 18:07:10,807 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 18:07:10,994 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:07:35,620 - src.utils - INFO - Logging initialized
+2026-05-30 18:07:35,620 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:07:35,620 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:07:35,620 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 18:07:36,474 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 18:07:36,475 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 18:07:36,656 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:07:48,826 - src.utils - INFO - Logging initialized
+2026-05-30 18:07:48,827 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:07:48,827 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:07:48,827 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 18:07:49,517 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 18:07:49,517 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 18:07:49,601 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:08:20,122 - src.utils - INFO - Logging initialized
+2026-05-30 18:08:23,446 - src.utils - INFO - Logging initialized
+2026-05-30 18:08:23,446 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:08:23,446 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:08:23,446 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 18:08:24,287 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 18:08:24,287 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 18:08:24,391 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:09:06,905 - src.utils - INFO - Logging initialized
+2026-05-30 18:09:06,905 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:09:06,905 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:09:06,905 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 18:09:07,545 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 18:09:07,545 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 18:09:07,641 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:09:54,747 - src.utils - INFO - Logging initialized
+2026-05-30 18:09:54,747 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:09:54,747 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:09:54,747 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 15m)
+2026-05-30 18:09:55,367 - src.data_fetcher - INFO - Successfully fetched 25 records for TCS.NS
+2026-05-30 18:09:55,367 - src.utils - INFO - Successfully fetched TCS.NS: 25 records
+2026-05-30 18:10:23,823 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:10:38,098 - src.utils - INFO - Logging initialized
+2026-05-30 18:10:38,099 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:10:38,099 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:10:38,099 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1d, interval: 1m)
+2026-05-30 18:10:38,789 - src.data_fetcher - INFO - Successfully fetched 375 records for TCS.NS
+2026-05-30 18:10:38,789 - src.utils - INFO - Successfully fetched TCS.NS: 375 records
+2026-05-30 18:11:10,879 - src.utils - INFO - All Indian stocks fetched successfully!
+2026-05-30 18:11:11,594 - src.utils - INFO - Logging initialized
+2026-05-30 18:11:11,594 - src.utils - INFO - Starting to fetch Indian stock data...
+2026-05-30 18:11:11,594 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-30 18:11:11,594 - src.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 18:11:12,317 - src.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-30 18:11:12,317 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-30 18:11:27,276 - src.utils - INFO - All Indian stocks fetched successfully!

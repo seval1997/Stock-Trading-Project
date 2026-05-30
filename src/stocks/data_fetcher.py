@@ -4,6 +4,9 @@ import logging
 from datetime import datetime, timedelta
 import yfinance as yf
 from src.stocks.config import YFINANCE_TIMEOUT
+import pandas as pd
+import requests, certifi
+from io import StringIO
 
 logger = logging.getLogger(__name__)
 
@@ -48,5 +51,20 @@ class DataFetcher:
         except Exception as e:
             logger.error(f"Error fetching data for {symbol}: {e}")
             return None
+        
+    @staticmethod
+    def get_nse_symbols():
+        url = "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv"
+        headers = {"User-Agent": "Mozilla/5.0"}
+        response = requests.get(url, headers=headers, verify=certifi.where(), timeout=20)
+        data = StringIO(response.text)
+        df = pd.read_csv(data)
+        return df["SYMBOL"].dropna().tolist()
+
+    @staticmethod    
+    def search_symbol(symbols, query):
+            matches = [s for s in symbols if query.upper() in s.upper()]
+            return matches
+
 
 
