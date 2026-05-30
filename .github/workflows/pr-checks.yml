@@ -1,39 +1,87 @@
-name: PR Checks
+name: PR Quality Gate
 
 on:
   pull_request:
     branches:
-      - main   # or whichever branch you target for PRs
+      - main
 
 jobs:
-  lint-and-test:
+  lint-and-format:
     runs-on: ubuntu-latest
-
     steps:
-      # Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Python (since your project is Python-based)
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      # Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+          pip install flake8 black
 
-      # Run linting (flake8 or pylint)
-      - name: Run lint checks
-        run: |
-          pip install flake8
-          flake8 src/ --count --select=E9,F63,F7,F82 --show-source --statistics
+      - name: Run flake8 lint
+        run: flake8 src/
 
-      # Run tests (pytest)
-      - name: Run tests
+      - name: Check formatting with black
+        run: black --check src/
+
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install mypy
         run: |
-          pip install pytest
-          pytest
+          python -m pip install --upgrade pip
+          pip install mypy -r requirements.txt
+
+      - name: Run mypy type checks
+        run: mypy src/
+
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pytest
+
+      - name: Run pytest
+        run: pytest
+
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install safety
+        run: |
+          python -m pip install --upgrade pip
+          pip install safety -r requirements.txt
+
+      - name: Run safety check
+        run: safety check
