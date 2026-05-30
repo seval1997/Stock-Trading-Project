@@ -3,7 +3,7 @@
 import logging
 from datetime import datetime, timedelta
 import yfinance as yf
-from src.config import YFINANCE_TIMEOUT
+from src.stocks.config import YFINANCE_TIMEOUT
 
 logger = logging.getLogger(__name__)
 
