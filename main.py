@@ -1,6 +1,5 @@
 """Main entry point for the Trading Project - Supports Stock & Crypto."""
 
-import logging
 import argparse
 from src.utils import setup_logging
 from src.crypto.data_fetcher import DataFetcher as CryptoDataFetcher  # updated path
@@ -12,35 +11,38 @@ logger = setup_logging()
 
 def run_stock():
     """Fetch Indian stock data (NSE/BSE)."""
-    symbols = [
-        "TCS.NS"          # Tata Consultancy Services
-    ]
+    symbols = StockDataFetcher.get_nse_symbols()
+    logger.info(f"Fetched {len(symbols)} NSE symbols. Sample: {symbols[:10]}")
+
+    query = input("Enter stock symbol to search (or press Enter to fetch all): ").strip()
+    matches = StockDataFetcher.search_symbol(symbols, query)
+
+    if not matches:
+        print("No matching symbols found.")
+        return
+    
+    print("Matching symbols:")
+    for i, s in enumerate(matches, 1):
+        print(f"{i}. {s}")
+    
+    choice = int(input("Select a symbol number: "))
+    symbol = matches[choice - 1] + ".NS"  # append NSE suffix
     
     try:
-        logger.info("Starting to fetch Indian stock data...")
-        for symbol in symbols:
-            logger.info(f"Fetching data for {symbol}...")
-            
-            # Fetch stock data (1 year of historical data, daily intervals)
-            data = StockDataFetcher.fetch_yfinance(
-                symbol,
-                period="1y",
-                interval="1d"
-            )
-            
-            if data is not None:
-                logger.info(f"Successfully fetched {symbol}: {len(data)} records")
-                # Print first few rows
-                print(f"\n{symbol} - Sample Data:")
-                print(data)
-                plot_graph(data, symbol)
-            else:
-                logger.warning(f"No data retrieved for {symbol}")
-        
-        logger.info("All Indian stocks fetched successfully!")
-    
+        logger.info(f"Fetching data for {symbol}...")
+        data = StockDataFetcher.fetch_yfinance(symbol, period="1y", interval="1d")
+
+        if data is not None:
+            logger.info(f"Successfully fetched {symbol}: {len(data)} records")
+            print(f"\n{symbol} - Sample Data:")
+            print(data.head())
+            plot_graph(data, symbol)
+        else:
+            logger.warning(f"No data retrieved for {symbol}")
+
     except Exception as e:
-        logger.error(f"Error in main: {e}")
+        logger.error(f"Error in run_stock: {e}")
+
 
 def plot_graph(data, symbol):
     """Plot the data into the graphs"""
