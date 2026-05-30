@@ -1,7 +1,7 @@
 """Tests for data fetcher module - Indian Market."""
 
 import unittest
-from src.data_fetcher import DataFetcher
+from src.stocks.data_fetcher import DataFetcher
 
 
 class TestDataFetcher(unittest.TestCase):
