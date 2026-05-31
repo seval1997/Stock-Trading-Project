@@ -1,7 +1,7 @@
 """Tests for data fetcher module - Indian Market."""
 
 import unittest
-from src.stocks.data_fetcher import DataFetcher
+from backend.src.stocks.data_fetcher import DataFetcher
 
 
 class TestDataFetcher(unittest.TestCase):
@@ -27,7 +27,7 @@ class TestDataFetcher(unittest.TestCase):
 
     def test_validate_symbol(self):
         """Test stock symbol validation."""
-        from src.utils import validate_symbol
+        from backend.src.utils import validate_symbol
         
         self.assertEqual(validate_symbol("tcs"), "TCS")
         self.assertEqual(validate_symbol("INFY"), "INFY")
@@ -40,7 +40,7 @@ class TestDataFetcher(unittest.TestCase):
 
     def test_calculate_returns(self):
         """Test return calculation."""
-        from src.utils import calculate_returns
+        from backend.src.utils import calculate_returns
         
         # Investment of ₹10,000 -> ₹15,000
         returns = calculate_returns(10000, 15000)
