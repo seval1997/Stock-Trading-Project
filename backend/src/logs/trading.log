@@ -1,0 +1,36 @@
+2026-05-30 21:38:17,719 - src.utils - INFO - Logging initialized
+2026-05-30 21:38:17,833 - src.utils - INFO - Fetched 2365 NSE symbols. Sample: ['20MICRONS', '21STCENMGM', '360ONE', '3BBLACKBIO', '3IINFOLTD', '3MINDIA', '3PLAND', '5PAISA', '63MOONS', 'A2ZINFRA']
+2026-05-30 21:38:23,741 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-30 21:38:23,741 - src.stocks.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-30 21:38:24,530 - src.stocks.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-30 21:38:24,530 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-30 21:39:41,532 - src.utils - ERROR - Error in run_stock: type object 'datetime.time' has no attribute 'sleep'
+2026-05-31 16:39:40,331 - src.utils - INFO - Logging initialized
+2026-05-31 16:39:40,517 - src.utils - INFO - Fetched 2365 NSE symbols. Sample: ['20MICRONS', '21STCENMGM', '360ONE', '3BBLACKBIO', '3IINFOLTD', '3MINDIA', '3PLAND', '5PAISA', '63MOONS', 'A2ZINFRA']
+2026-05-31 16:39:52,380 - src.utils - INFO - Fetching data for RELIANCE.NS...
+2026-05-31 16:39:52,380 - src.stocks.data_fetcher - INFO - Fetching data for RELIANCE.NS from yfinance (period: 1y, interval: 1d)
+2026-05-31 16:39:53,192 - src.stocks.data_fetcher - INFO - Successfully fetched 250 records for RELIANCE.NS
+2026-05-31 16:39:53,192 - src.utils - INFO - Successfully fetched RELIANCE.NS: 250 records
+2026-05-31 18:47:12,333 - src.utils - INFO - Logging initialized
+2026-05-31 18:47:12,360 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-31 18:47:12,361 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-05-31 18:47:12,361 - werkzeug - INFO -  * Restarting with stat
+2026-05-31 18:47:12,928 - src.utils - INFO - Logging initialized
+2026-05-31 18:47:12,942 - werkzeug - WARNING -  * Debugger is active!
+2026-05-31 18:47:12,951 - werkzeug - INFO -  * Debugger PIN: 723-955-061
+2026-05-31 18:47:32,110 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:47:32] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-31 18:47:32,155 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:47:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-05-31 18:48:59,591 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:48:59] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-31 18:49:13,593 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:49:13] "GET /api/symbols HTTP/1.1" 200 -
+2026-05-31 18:49:26,493 - src.utils - INFO - Fetching data for TCS.NS...
+2026-05-31 18:49:26,493 - src.stocks.data_fetcher - INFO - Fetching data for TCS.NS from yfinance (period: 1y, interval: 1d)
+2026-05-31 18:49:27,394 - src.stocks.data_fetcher - INFO - Successfully fetched 250 records for TCS.NS
+2026-05-31 18:49:27,394 - src.utils - INFO - Successfully fetched TCS.NS: 250 records
+2026-05-31 18:49:27,395 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:49:27] "GET /api/stock/TCS.NS HTTP/1.1" 200 -
+2026-05-31 18:49:53,530 - werkzeug - INFO -  * Detected change in '/Users/sevalpatel/Documents/Stock Trading Project/Stock-Trading-Project/backend/main.py', reloading
+2026-05-31 18:49:53,702 - werkzeug - INFO -  * Restarting with stat
+2026-05-31 18:49:54,767 - src.utils - INFO - Logging initialized
+2026-05-31 18:49:54,790 - werkzeug - WARNING -  * Debugger is active!
+2026-05-31 18:49:54,798 - werkzeug - INFO -  * Debugger PIN: 723-955-061
+2026-05-31 18:50:06,258 - werkzeug - INFO - 127.0.0.1 - - [31/May/2026 18:50:06] "GET / HTTP/1.1" 200 -
