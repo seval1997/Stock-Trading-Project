@@ -2,7 +2,7 @@
 
 import logging
 from datetime import datetime
-from src.stocks.config import LOG_FILE, LOG_LEVEL
+from backend.src.stocks.config import LOG_FILE, LOG_LEVEL
 
 
 def setup_logging():
