@@ -1,9 +1,9 @@
 """Flask backend entry point for Trading Project - Supports Stock & Crypto."""
 
 from flask import Flask, jsonify, request
-from src.utils import setup_logging
-from src.crypto.data_fetcher import DataFetcher as CryptoDataFetcher
-from src.stocks.data_fetcher import DataFetcher as StockDataFetcher
+from backend.src.utils import setup_logging
+from backend.src.crypto.data_fetcher import DataFetcher as CryptoDataFetcher
+from backend.src.stocks.data_fetcher import DataFetcher as StockDataFetcher
 import sqlite3
 
 # Setup logging
