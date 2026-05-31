@@ -3,7 +3,7 @@
 import logging
 from datetime import datetime, timedelta
 import yfinance as yf
-from src.stocks.config import YFINANCE_TIMEOUT
+from backend.src.stocks.config import YFINANCE_TIMEOUT
 import pandas as pd
 import requests, certifi
 from io import StringIO
