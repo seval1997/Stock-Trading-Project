@@ -18,50 +18,71 @@ jobs:
           # Regex for tag + number + colon + context
           if [[ ! "$TITLE" =~ ^(Feature|Fix|Enhancement|Docs|Test|Chore|Build|Security|Performance|Release)[[:space:]]*-[[:space:]]*[0-9]{3,4}[[:space:]]*:[[:space:]].+$ ]]; then
             echo "Invalid PR title format."
-            echo "Title must start with one of the approved tags, followed by a number (001–9999), a colon, and a context description."
-            echo "Examples: 'Feature - 001 : Add login API', 'Fix - 045 : Resolve timeout bug'"
             exit 1
           fi
 
-          # Extract context after colon
           CONTEXT=$(echo "$TITLE" | sed -E 's/^(Feature|Fix|Enhancement|Docs|Test|Chore|Build|Security|Performance|Release)[[:space:]]*-[[:space:]]*[0-9]{3,4}[[:space:]]*:[[:space:]]*(.*)$/\2/')
-
           LEN=${#CONTEXT}
           if [ $LEN -lt 20 ] || [ $LEN -gt 120 ]; then
             echo "Invalid PR context length."
-            echo "Context must be between 20 and 120 characters."
-            echo "Current length: $LEN"
             exit 1
           fi
 
           echo "PR title is valid."
 
-  lint-and-test:
+  backend-checks:
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Setup Python (since your project is Python-based)
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      # Install dependencies
-      - name: Install dependencies
+      - name: Install backend dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r backend/requirements.txt
 
-      # Run linting (flake8 or pylint)
       - name: Run lint checks
         run: |
           pip install flake8
           flake8 backend/src/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      # Run tests (pytest)
-      - name: Run tests
+      - name: Run pytest
         run: |
           pip install pytest
+          pytest backend/tests --maxfail=1 --disable-warnings -q
+
+  frontend-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Lint frontend
+        working-directory: frontend
+        run: npm run lint
+
+      - name: Run frontend tests
+        working-directory: frontend
+        run: npm test -- --ci --coverage
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      - name: Security audit
+        working-directory: frontend
+        run: npm audit --production
