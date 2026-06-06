@@ -1,43 +1,86 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import DashboardPage from "./pages/DashboardPage";
+import StocksPage from "./pages/StockPage";
+import CryptoPage from "./pages/CryptoPage";
+import SettingsPage from "./pages/SettingsPage";
+import ProfilePage from "./pages/ProfilePage";
+
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  IconButton,
+  Toolbar,
+  AppBar,
+  Typography
+} from "@mui/material";
+import {
+  Home as HomeIcon,
+  Dashboard as DashboardIcon,
+  ShowChart as StocksIcon,
+  CurrencyBitcoin as CryptoIcon,
+  Settings as SettingsIcon,
+  AccountCircle as ProfileIcon,
+  Menu as MenuIcon
+} from "@mui/icons-material";
+
+function Home() { return <h2>Home Page</h2>; }
+function Dashboard() { return <h2>Dashboard Page</h2>; }
+function Stocks() { return <h2>Stocks Page</h2>; }
+function Crypto() { return <h2>Crypto Page</h2>; }
+function Settings() { return <h2>Settings Page</h2>; }
+function Profile() { return <h2>Profile Page</h2>; }
 
 function App() {
-  const [message, setMessage] = useState("");
-  const [rows, setRows] = useState([
-    { symbol: "TCS", price: 3450 },
-    { symbol: "INFY", price: 1520 },
-    { symbol: "HDFCBANK", price: 1650 }
-  ]);
+  const [open, setOpen] = useState(true);
+  const toggleDrawer = () => setOpen(!open);
 
-  useEffect(() => {
-    axios.get("http://127.0.0.1:5000/api/hello")
-      .then(res => setMessage(res.data.message))
-      .catch(err => console.error(err));
-  }, []);
+  const menuItems = [
+    { text: "Home", icon: <HomeIcon />, path: "/" },
+    { text: "Dashboard", icon: <DashboardIcon />, path: "/dashboard" },
+    { text: "Stocks", icon: <StocksIcon />, path: "/stocks" },
+    { text: "Crypto", icon: <CryptoIcon />, path: "/crypto" },
+    { text: "Settings", icon: <SettingsIcon />, path: "/settings" },
+    { text: "Profile", icon: <ProfileIcon />, path: "/profile" }
+  ];
 
   return (
-    <div>
-      <h1>React + Flask Dashboard</h1>
-      <p>{message}</p>
+    <Router>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton color="inherit" onClick={toggleDrawer}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6">Trading Dashboard</Typography>
+        </Toolbar>
+      </AppBar>
 
-      {/* Table */}
-      <table border="1" style={{ borderCollapse: "collapse", width: "50%" }}>
-        <thead>
-          <tr>
-            <th>Symbol</th>
-            <th>Price</th>
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row, index) => (
-            <tr key={index}>
-              <td>{row.symbol}</td>
-              <td>{row.price}</td>
-            </tr>
+      <Drawer variant="persistent" anchor="left" open={open}>
+        <List>
+          {menuItems.map((item, index) => (
+            <ListItem button key={index} component={Link} to={item.path}>
+              <ListItemIcon>{item.icon}</ListItemIcon>
+              {open && <ListItemText primary={item.text} />}
+            </ListItem>
           ))}
-        </tbody>
-      </table>
-    </div>
+        </List>
+      </Drawer>
+
+      <main style={{ marginLeft: open ? 240 : 60, padding: "1rem" }}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/stocks" element={<StocksPage />} />
+          <Route path="/crypto" element={<CryptoPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
+      </main>
+    </Router>
   );
 }
 
