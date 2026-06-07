@@ -82,18 +82,3 @@ jobs:
 
       - name: Run pytest
         run: pytest backend/tests/ -v
-
-  frontend-checks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install frontend dependencies
-        working-directory: frontend
-        run: npm ci
