@@ -41,7 +41,18 @@ def get_stock_data_by_symbol():
 def nifty50_dashboard_card():
     ticker = yf.Ticker("^NSEI")
     data = ticker.history(period="2d")
-    jsonifyData = jsonify({"symbol": "^NSEI", "interval": "1d", "period": "2d", "data": data.reset_index().to_dict("records")})
+    previousDay = data.iloc[-2]
+    latestDay = data.iloc[-1]
+
+    closingDiff = latestDay["Close"] - previousDay["Close"]
+    closingPercentageChange = (closingDiff / previousDay["Close"]) * 100
+    jsonifyData = jsonify({
+        "symbol": "Nifty 50",
+        "closingDiff": closingDiff,
+        "closingPercentageChange": closingPercentageChange,
+        "date": latestDay.name.strftime("%Y-%m-%d"),
+        "data": latestDay.to_dict()
+    })
     return jsonifyData
 
 if __name__ == "__main__":
