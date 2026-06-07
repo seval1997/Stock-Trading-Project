@@ -33,5 +33,12 @@ def get_stock_data_by_symbol():
     data = ticker.history(interval=interval, period=period)
     return jsonify({"symbol": symbol, "interval": interval, "period": period, "data": data.reset_index().to_dict("records")})
 
+@app.route("/nifty50_dashboard_card")
+def nifty50_dashboard_card():
+    ticker = yf.Ticker("^NSEI")
+    data = ticker.history(period="2d")
+    jsonifyData = jsonify({"symbol": "^NSEI", "interval": "1d", "period": "2d", "data": data.reset_index().to_dict("records")})
+    return jsonifyData
+
 if __name__ == "__main__":
     get_stock_data_by_symbol()
