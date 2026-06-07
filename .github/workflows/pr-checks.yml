@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
+          pip install -r requirements.txt
 
       # Run linting (flake8 or pylint)
       - name: Run lint checks
@@ -55,12 +55,7 @@ jobs:
           pip install flake8
           flake8 backend/src/ --count --select=E9,F63,F7,F82 --show-source --statistics
 
-        # Run tests (pytest)
-      - name: Run tests
-        run: |
-          pip install pytest
-
-  backend-checks:
+  api-checks:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -74,29 +69,7 @@ jobs:
       - name: Install backend dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r backend/requirements.txt
-
-      - name: Run lint checks
-        run: |
-          pip install flake8
-          flake8 backend/src/ --count --select=E9,F63,F7,F82 --show-source --statistics
+          pip install -r requirements.txt
 
       - name: Run pytest
-        run: |
-          pip install pytest
-          #TODO: Add test discovery and execution command here
-
-  frontend-checks:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: Install frontend dependencies
-        working-directory: frontend
-        run: npm ci
+        run: pytest backend/tests/ -v
