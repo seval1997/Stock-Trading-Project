@@ -11,20 +11,24 @@ CORS(app)
 
 @app.route("/nse-symbols")
 def fetch_nse_symbols():
-    # Official NSE equities list CSV
-    url = "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv"
-    headers = {"User-Agent": "Mozilla/5.0"}  # NSE blocks requests without UA
-    response = requests.get(url, headers=headers, verify=certifi.where(), timeout=20)
-    response.raise_for_status()
-    # Load into pandas DataFrame
-    data = StringIO(response.text)
-    df = pd.read_csv(data)
-    # Extract SYMBOL column
-    symbols = df["SYMBOL"].dropna().tolist()
-    print(f"Fetched {len(symbols)} symbols from NSE")
-    return jsonify(symbols)
+    try:
+        # Official NSE equities list CSV
+        url = "https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv"
+        headers = {"User-Agent": "Mozilla/5.0"}  # NSE blocks requests without UA
+        response = requests.get(url, headers=headers, verify=certifi.where(), timeout=20)
+        response.raise_for_status()
+        # Load into pandas DataFrame
+        data = StringIO(response.text)
+        df = pd.read_csv(data)
+        # Extract SYMBOL column
+        symbols = df["SYMBOL"].dropna().tolist()
+        print(f"Fetched {len(symbols)} symbols from NSE")
+        return jsonify(symbols)
+    except Exception as e:
+        print(f"Error fetching NSE symbols: {str(e)}")
+        return jsonify({"error": "Failed to fetch NSE symbols"}), 500
 
-app.route("/get_stock_data_by_symbol")
+@app.route("/get_stock_data_by_symbol")
 def get_stock_data_by_symbol():
     symbol = request.args.get("symbol")
     interval = request.args.get("interval", "1d")

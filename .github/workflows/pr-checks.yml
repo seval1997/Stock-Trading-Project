@@ -84,7 +84,7 @@ jobs:
       - name: Run pytest
         run: |
           pip install pytest
-          #TODO: Add test discovery and execution command here
+          pytest backend/tests/ -v
 
   frontend-checks:
     runs-on: ubuntu-latest
