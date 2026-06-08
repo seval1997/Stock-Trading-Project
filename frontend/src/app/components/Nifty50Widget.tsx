@@ -2,7 +2,11 @@ import { TrendingUp, TrendingDown, RefreshCw } from "lucide-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Nifty50Widget() {
+interface Nifty50WidgetProps {
+  onTabChange?: (tab: string) => void;
+}
+
+export default function Nifty50Widget({ onTabChange }: Nifty50WidgetProps) {
   const [nifty50Data, setNifty50Data] = useState(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
@@ -22,7 +26,7 @@ export default function Nifty50Widget() {
           low: data.Low,
           close: data.Close,
           lastUpdated: records.date,
-          previousClose: records.closingDiff < 0 ? data.Close - records.closingDiff : data.Close - records.closingDiff 
+          previousClose: records.closingDiff < 0 ? data.Close - records.closingDiff : data.Close - records.closingDiff
         });
       })
       .catch((error) => {
@@ -33,6 +37,12 @@ export default function Nifty50Widget() {
   const handleRefresh = () => {
     setIsRefreshing(true);
     setTimeout(() => setIsRefreshing(false), 1000);
+  };
+
+  const openDetailedNifty50View = () => {
+    if (onTabChange) {
+      onTabChange("nifty50-detailed");
+    }
   };
 
   if (!nifty50Data) {
@@ -63,24 +73,34 @@ export default function Nifty50Widget() {
               Last updated: {nifty50Data.lastUpdated} IST
             </p>
           </div>
-          <button
-            onClick={handleRefresh}
-            disabled={isRefreshing}
-            className="p-2 rounded-lg hover:bg-[var(--color-muted)] transition-colors disabled:opacity-50"
-            title="Refresh data"
-          >
-            <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
-          </button>
-        </div>
+          <div className="flex flex-col items-end gap-2">
+            {/* Refresh Button */}
+            <button
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+              className="p-2 rounded-lg hover:bg-[var(--color-muted)] transition-colors disabled:opacity-50"
+              title="Refresh data"
+            >
+              <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
+            </button>
 
+            {/* New Button */}
+            <button
+              onClick={openDetailedNifty50View}
+              className="px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+              title="Open detailed view"
+            >
+              Open
+            </button>
+          </div>
+        </div>
         <div className="flex items-baseline gap-3">
           <div className="text-3xl font-bold">
             {nifty50Data.close.toFixed(2)}
           </div>
           <div
-            className={`flex items-center gap-1.5 text-lg font-semibold ${
-              isPositive ? "text-green-500" : "text-red-500"
-            }`}
+            className={`flex items-center gap-1.5 text-lg font-semibold ${isPositive ? "text-green-500" : "text-red-500"
+              }`}
           >
             {isPositive ? (
               <TrendingUp className="w-5 h-5" />

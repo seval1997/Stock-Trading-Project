@@ -1,7 +1,11 @@
 import { TrendingUp, TrendingDown, DollarSign, Activity, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 import Nifty50Widget from './Nifty50Widget';
 
-export default function DashboardContent() {
+interface DashboardContentProps {
+  onTabChange?: (tab: string) => void;
+}
+
+export default function DashboardContent({ onTabChange }: DashboardContentProps) {
   const stats = [
     {
       label: 'Total Portfolio Value',
@@ -57,7 +61,7 @@ export default function DashboardContent() {
       </div>
 
       {/* Nifty50 Widget */}
-      <Nifty50Widget />
+      <Nifty50Widget onTabChange={onTabChange} />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
