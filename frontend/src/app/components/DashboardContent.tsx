@@ -2,10 +2,10 @@ import { TrendingUp, TrendingDown, DollarSign, Activity, ArrowUpRight, ArrowDown
 import Nifty50Widget from './Nifty50Widget';
 
 interface DashboardContentProps {
-  onTabChange?: (tab: string) => void;
+  onShowNiftyDetails?: () => void;
 }
 
-export default function DashboardContent({ onTabChange }: DashboardContentProps) {
+export default function DashboardContent({ onShowNiftyDetails }: DashboardContentProps) {
   const stats = [
     {
       label: 'Total Portfolio Value',
@@ -61,7 +61,7 @@ export default function DashboardContent({ onTabChange }: DashboardContentProps)
       </div>
 
       {/* Nifty50 Widget */}
-      <Nifty50Widget onTabChange={onTabChange} />
+      <Nifty50Widget onViewDetails={onShowNiftyDetails} />
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

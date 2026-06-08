@@ -1,25 +1,13 @@
-import { useState } from "react";
-import Sidebar from "./components/Sidebar";
-import DashboardContent from "./components/DashboardContent";
-import Nifty50Widget from "./components/Nifty50Widget"; // example extra page
-import Nifty50Detailed from "./components/Nifty50Detailed"; // create this file
+import { useState } from 'react';
+import Sidebar from './components/Sidebar';
+import DashboardContent from './components/DashboardContent';
+import Nifty50DetailedView from './components/Nifty50DetailedView';
+import { ArrowLeft } from 'lucide-react';
 
 export default function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [activeTab, setActiveTab] = useState("dashboard");
-
-  const renderContent = () => {
-    switch (activeTab) {
-      case "dashboard":
-        return <DashboardContent onTabChange={setActiveTab} />;
-      case "nifty50":
-        return <Nifty50Widget onTabChange={setActiveTab} />;
-      case "nifty50-detailed":
-        return <Nifty50Detailed />; // detailed view for Nifty50
-      default:
-        return <div className="p-6">Page not found</div>;
-    }
-  };
+  const [activeTab, setActiveTab] = useState('dashboard');
+  const [showNiftyDetails, setShowNiftyDetails] = useState(false);
 
   return (
     <div className="size-full flex bg-[var(--color-background)]">
@@ -29,7 +17,24 @@ export default function App() {
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />
-      <main className="flex-1 overflow-auto">{renderContent()}</main>
+      <main className="flex-1 overflow-auto">
+        {showNiftyDetails ? (
+          <div className="p-6 space-y-6">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setShowNiftyDetails(false)}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] hover:bg-[var(--color-muted)] transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to Dashboard
+              </button>
+            </div>
+            <Nifty50DetailedView />
+          </div>
+        ) : (
+          <DashboardContent onShowNiftyDetails={() => setShowNiftyDetails(true)} />
+        )}
+      </main>
     </div>
   );
 }

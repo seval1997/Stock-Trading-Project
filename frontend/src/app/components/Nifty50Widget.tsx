@@ -1,13 +1,25 @@
-import { TrendingUp, TrendingDown, RefreshCw } from "lucide-react";
+import { TrendingUp, TrendingDown, RefreshCw, Eye } from "lucide-react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface Nifty50WidgetProps {
-  onTabChange?: (tab: string) => void;
+interface Nifty50Data {
+  index: string;
+  change: number;
+  changePercent: number;
+  open: number;
+  high: number;
+  low: number;
+  close: number;
+  lastUpdated: string;
+  previousClose: number;
 }
 
-export default function Nifty50Widget({ onTabChange }: Nifty50WidgetProps) {
-  const [nifty50Data, setNifty50Data] = useState(null);
+interface Nifty50WidgetProps {
+  onViewDetails?: () => void;
+}
+
+export default function Nifty50Widget({ onViewDetails }: Nifty50WidgetProps) {
+  const [nifty50Data, setNifty50Data] = useState<Nifty50Data | null>(null);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
@@ -39,11 +51,6 @@ export default function Nifty50Widget({ onTabChange }: Nifty50WidgetProps) {
     setTimeout(() => setIsRefreshing(false), 1000);
   };
 
-  const openDetailedNifty50View = () => {
-    if (onTabChange) {
-      onTabChange("nifty50-detailed");
-    }
-  };
 
   if (!nifty50Data) {
     return (
@@ -73,24 +80,24 @@ export default function Nifty50Widget({ onTabChange }: Nifty50WidgetProps) {
               Last updated: {nifty50Data.lastUpdated} IST
             </p>
           </div>
-          <div className="flex flex-col items-end gap-2">
-            {/* Refresh Button */}
+          <div className="flex flex-col gap-2">
             <button
               onClick={handleRefresh}
               disabled={isRefreshing}
               className="p-2 rounded-lg hover:bg-[var(--color-muted)] transition-colors disabled:opacity-50"
               title="Refresh data"
             >
-              <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
+              <RefreshCw
+                className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`}
+              />
             </button>
-
-            {/* New Button */}
             <button
-              onClick={openDetailedNifty50View}
-              className="px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors"
-              title="Open detailed view"
+              onClick={onViewDetails}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-colors text-sm font-medium"
+              title="View detailed data"
             >
-              Open
+              <Eye className="w-4 h-4" />
+              Details
             </button>
           </div>
         </div>
