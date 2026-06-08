@@ -58,7 +58,8 @@ def nifty50_dashboard_card():
 @app.route("/nifty50_detailed_view")
 def nifty50_detailed_view():
     ticker = yf.Ticker("^NSEI")
-    data = ticker.history(period="max", interval="1d")
+    period = request.args.get("period")
+    data = ticker.history(period=period, interval="1d")
     data.reset_index(inplace=True)
     data["Date"] = data["Date"].dt.strftime("%Y-%m-%d")
     print(f"Fetched {data}")

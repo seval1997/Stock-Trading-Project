@@ -1,59 +1,58 @@
-import { TrendingUp, TrendingDown, Download, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { TrendingUp, TrendingDown, Download, Calendar } from "lucide-react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+interface HistoricalDataRow {
+    Close: number;
+    Date: string;
+    Dividends: number;
+    High: number;
+    Low: number;
+    Open: number;
+    StockSplit: number;
+    Volume: number;
+}
+
+interface TableDataRow extends HistoricalDataRow {
+    closeDiff: number;
+    closeDiffPercent: number;
+}
 
 export default function Nifty50DetailedView() {
-    const [selectedPeriod, setSelectedPeriod] = useState('1M');
+    const [selectedPeriod, setSelectedPeriod] = useState("2mo");
     const [rowsPerPage, setRowsPerPage] = useState(15);
     const [currentPage, setCurrentPage] = useState(1);
+    const [historicalData, setHistoricalData] = useState<HistoricalDataRow[]>([]);
 
-    // Mock historical Nifty50 data
-    const historicalData = [
-        { date: '2026-06-08', open: 22301.80, high: 22498.55, low: 22287.40, close: 22447.10, volume: 245678900 },
-        { date: '2026-06-07', open: 22256.45, high: 22345.80, low: 22198.30, close: 22301.80, volume: 238945600 },
-        { date: '2026-06-06', open: 22189.20, high: 22298.75, low: 22134.60, close: 22256.45, volume: 241234500 },
-        { date: '2026-06-05', open: 22045.35, high: 22234.90, low: 22001.25, close: 22189.20, volume: 252341200 },
-        { date: '2026-06-04', open: 21998.60, high: 22089.40, low: 21945.80, close: 22045.35, volume: 228567800 },
-        { date: '2026-06-03', open: 22123.75, high: 22156.30, low: 21967.50, close: 21998.60, volume: 235678400 },
-        { date: '2026-06-02', open: 22087.90, high: 22198.45, low: 22034.20, close: 22123.75, volume: 242156700 },
-        { date: '2026-06-01', open: 21934.25, high: 22134.80, low: 21889.60, close: 22087.90, volume: 248923100 },
-        { date: '2026-05-31', open: 21856.40, high: 21989.55, low: 21823.70, close: 21934.25, volume: 239845600 },
-        { date: '2026-05-30', open: 21789.65, high: 21901.20, low: 21734.80, close: 21856.40, volume: 233567200 },
-        { date: '2026-05-29', open: 21845.30, high: 21878.90, low: 21756.40, close: 21789.65, volume: 227891300 },
-        { date: '2026-05-28', open: 21756.80, high: 21898.60, low: 21712.30, close: 21845.30, volume: 245123800 },
-        { date: '2026-05-27', open: 21698.45, high: 21812.70, low: 21645.90, close: 21756.80, volume: 238456900 },
-        { date: '2026-05-26', open: 21623.90, high: 21734.50, low: 21587.20, close: 21698.45, volume: 231789400 },
-        { date: '2026-06-09', open: 22301.80, high: 22498.55, low: 22287.40, close: 22447.10, volume: 245678900 },
-        { date: '2026-06-10', open: 22256.45, high: 22345.80, low: 22198.30, close: 22301.80, volume: 238945600 },
-        { date: '2026-06-11', open: 22189.20, high: 22298.75, low: 22134.60, close: 22256.45, volume: 241234500 },
-        { date: '2026-06-12', open: 22045.35, high: 22234.90, low: 22001.25, close: 22189.20, volume: 252341200 },
-        { date: '2026-06-13', open: 21998.60, high: 22089.40, low: 21945.80, close: 22045.35, volume: 228567800 },
-        { date: '2026-06-14', open: 22123.75, high: 22156.30, low: 21967.50, close: 21998.60, volume: 235678400 },
-        { date: '2026-06-15', open: 22087.90, high: 22198.45, low: 22034.20, close: 22123.75, volume: 242156700 },
-        { date: '2026-06-16', open: 21934.25, high: 22134.80, low: 21889.60, close: 22087.90, volume: 248923100 },
-        { date: '2026-05-17', open: 21856.40, high: 21989.55, low: 21823.70, close: 21934.25, volume: 239845600 },
-        { date: '2026-05-18', open: 21789.65, high: 21901.20, low: 21734.80, close: 21856.40, volume: 233567200 },
-        { date: '2026-05-10', open: 21845.30, high: 21878.90, low: 21756.40, close: 21789.65, volume: 227891300 },
-        { date: '2026-05-20', open: 21756.80, high: 21898.60, low: 21712.30, close: 21845.30, volume: 245123800 },
-        { date: '2026-05-27', open: 21698.45, high: 21812.70, low: 21645.90, close: 21756.80, volume: 238456900 },
-        { date: '2026-05-26', open: 21623.90, high: 21734.50, low: 21587.20, close: 21698.45, volume: 231789400 },
-        { date: '2026-05-25', open: 21567.20, high: 21678.80, low: 21523.40, close: 21623.90, volume: 226543700 }
-    ];
+    useEffect(() => {
+        axios.get("http://localhost:5000/api/stocks/nifty50_detailed_view?period=" + selectedPeriod)
+            .then(response => {
+                const reversedData = [...response.data.data].reverse();
+                setHistoricalData(reversedData);
+            })
+            .catch(error => {
+                console.error("Error fetching Nifty50 detailed view data:", error);
+            });
+    }, [selectedPeriod]);
 
     // Calculate Close Diff and Close Diff Percentage
-    const tableData = historicalData.map((row, index) => {
-        const prevClose = index < historicalData.length - 1 ? historicalData[index + 1].close : row.close;
-        const closeDiff = row.close - prevClose;
-        const closeDiffPercent = ((closeDiff / prevClose) * 100);
+    const tableData: TableDataRow[] = historicalData && historicalData.length > 0
+        ? historicalData.map((row, index) => {
+            const nextRow = historicalData[index + 1];
+            const prevClose = nextRow ? nextRow.Close : row.Close;
+            const closeDiff = row.Close - prevClose;
+            const closeDiffPercent = ((closeDiff / prevClose) * 100);
 
-        return {
-            ...row,
-            closeDiff,
-            closeDiffPercent
-        };
-    });
+            return {
+                ...row,
+                closeDiff,
+                closeDiffPercent
+            };
+        })
+        : [];
 
-    const periods = ['1W', '1M', '3M', '6M', '1Y'];
-    const rowsOptions = [15, 30, 50, 100];
+    const periods = ['7d', '15d', '1mo', '3mo'];
+    const rowsOptions = [15, 30];
 
     // Pagination calculations
     const totalPages = Math.ceil(tableData.length / rowsPerPage);
@@ -62,23 +61,11 @@ export default function Nifty50DetailedView() {
     const paginatedData = tableData.slice(startIndex, endIndex);
 
     // Reset to page 1 when rows per page changes
-    const handleRowsPerPageChange = (rows) => {
+    const handleRowsPerPageChange = (rows: number) => {
         setRowsPerPage(rows);
         setCurrentPage(1);
     };
 
-    const formatDate = (dateString) => {
-        const date = new Date(dateString);
-        return date.toLocaleDateString('en-IN', {
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-    };
-
-    const formatVolume = (volume) => {
-        return (volume / 10000000).toFixed(2);
-    };
 
     const handleExport = () => {
         // Simulate export functionality
@@ -133,7 +120,6 @@ export default function Nifty50DetailedView() {
                             <th className="text-right p-4 text-sm font-semibold">High</th>
                             <th className="text-right p-4 text-sm font-semibold">Low</th>
                             <th className="text-right p-4 text-sm font-semibold">Close</th>
-                            <th className="text-right p-4 text-sm font-semibold">Volume (Cr)</th>
                             <th className="text-right p-4 text-sm font-semibold">Close Diff</th>
                             <th className="text-right p-4 text-sm font-semibold">Close Diff %</th>
                         </tr>
@@ -141,18 +127,18 @@ export default function Nifty50DetailedView() {
                     <tbody>
                         {paginatedData.map((row, index) => {
                             const isPositive = row.closeDiff >= 0;
-                            const isHighest = row.close === row.high;
-                            const isLowest = row.close === row.low;
+                            const isHighest = row.Close === row.High;
+                            const isLowest = row.Close === row.Low;
 
                             return (
                                 <tr
-                                    key={row.date}
+                                    key={row.Date}
                                     className={`border-b border-[var(--color-border)] hover:bg-[var(--color-muted)] transition-colors ${startIndex + index === 0 ? 'bg-blue-500/5' : ''
                                         }`}
                                 >
                                     <td className="p-4">
                                         <div className="flex items-center gap-2">
-                                            <span className="font-medium">{formatDate(row.date)}</span>
+                                            <span className="font-medium">{row.Date}</span>
                                             {startIndex + index === 0 && (
                                                 <span className="px-2 py-0.5 text-xs font-medium bg-blue-500/20 text-blue-600 rounded">
                                                     Latest
@@ -161,25 +147,22 @@ export default function Nifty50DetailedView() {
                                         </div>
                                     </td>
                                     <td className="p-4 text-right font-medium">
-                                        {row.open.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        {row.Open.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </td>
                                     <td className="p-4 text-right font-medium text-green-600">
-                                        {row.high.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        {row.High.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </td>
                                     <td className="p-4 text-right font-medium text-red-600">
-                                        {row.low.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                        {row.Low.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                     </td>
                                     <td className="p-4 text-right">
                                         <div className="flex items-center justify-end gap-1">
                                             <span className="font-semibold">
-                                                {row.close.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+                                                {row.Close.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                             </span>
                                             {isHighest && <TrendingUp className="w-3 h-3 text-green-500" />}
                                             {isLowest && <TrendingDown className="w-3 h-3 text-red-500" />}
                                         </div>
-                                    </td>
-                                    <td className="p-4 text-right font-medium">
-                                        {formatVolume(row.volume)}
                                     </td>
                                     <td className={`p-4 text-right font-semibold ${isPositive ? 'text-green-500' : 'text-red-500'}`}>
                                         {isPositive ? '+' : ''}{row.closeDiff.toFixed(2)}
@@ -259,30 +242,17 @@ export default function Nifty50DetailedView() {
 
             {/* Footer Summary */}
             <div className="p-4 border-t border-[var(--color-border)] bg-[var(--color-muted)]/50">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div className="grid grid-cols-2 md:grid-cols-2 gap-4 text-sm text-center">
                     <div>
                         <div className="text-[var(--color-text-secondary)] mb-1">Period High</div>
                         <div className="font-semibold text-green-600">
-                            {Math.max(...tableData.map(d => d.high)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
+                            {Math.max(...tableData.map(d => d.High)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                         </div>
                     </div>
                     <div>
                         <div className="text-[var(--color-text-secondary)] mb-1">Period Low</div>
                         <div className="font-semibold text-red-600">
-                            {Math.min(...tableData.map(d => d.low)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
-                        </div>
-                    </div>
-                    <div>
-                        <div className="text-[var(--color-text-secondary)] mb-1">Avg Volume</div>
-                        <div className="font-semibold">
-                            {(tableData.reduce((acc, d) => acc + d.volume, 0) / tableData.length / 10000000).toFixed(2)} Cr
-                        </div>
-                    </div>
-                    <div>
-                        <div className="text-[var(--color-text-secondary)] mb-1">Total Change</div>
-                        <div className={`font-semibold ${tableData[0].close >= tableData[tableData.length - 1].close ? 'text-green-600' : 'text-red-600'
-                            }`}>
-                            {((tableData[0].close - tableData[tableData.length - 1].close) / tableData[tableData.length - 1].close * 100).toFixed(2)}%
+                            {Math.min(...tableData.map(d => d.Low)).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                         </div>
                     </div>
                 </div>
