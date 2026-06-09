@@ -55,5 +55,18 @@ def nifty50_dashboard_card():
     })
     return jsonifyData
 
+@app.route("/nifty50_detailed_view")
+def nifty50_detailed_view():
+    ticker = yf.Ticker("^NSEI")
+    period = request.args.get("period")
+    data = ticker.history(period=period, interval="1d")
+    data.reset_index(inplace=True)
+    data["Date"] = data["Date"].dt.strftime("%Y-%m-%d")
+    print(f"Fetched {data}")
+    return jsonify({
+        "symbol": "Nifty 50",
+        "data": data.to_dict("records")
+    })
+
 if __name__ == "__main__":
     get_stock_data_by_symbol()
