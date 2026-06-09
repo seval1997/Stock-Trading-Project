@@ -2,15 +2,22 @@ import { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import DashboardContent from './components/DashboardContent';
 import Nifty50DetailedView from './components/Nifty50DetailedView';
+import LoginPage from './components/LoginPage';
 import { ArrowLeft } from 'lucide-react';
 
 export default function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
   const [showNiftyDetails, setShowNiftyDetails] = useState(false);
 
+  if (!isLoggedIn) {
+    return <LoginPage onLogin={() => setIsLoggedIn(true)} />;
+  }
+
   return (
     <div className="size-full flex bg-[var(--color-background)]">
+      {/* MARKER-MAKE-KIT-INVOKED */}
       <Sidebar
         isCollapsed={isCollapsed}
         onToggle={() => setIsCollapsed(!isCollapsed)}
