@@ -67,6 +67,3 @@ def nifty50_detailed_view():
         "symbol": "Nifty 50",
         "data": data.to_dict("records")
     })
-
-if __name__ == "__main__":
-    get_stock_data_by_symbol()

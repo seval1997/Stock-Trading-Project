@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState } from "react";
+import axios from "axios";
 import { TrendingUp, Eye, EyeOff, Lock, User, Mail, CheckCircle } from 'lucide-react';
 
 const STORAGE_KEY = 'trading_dashboard_users';
@@ -26,11 +27,6 @@ function getUsers(): StoredUser[] {
     }
 }
 
-function saveUser(user: StoredUser) {
-    const users = getUsers();
-    users.push(user);
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
-}
 
 interface LoginPageProps {
     onLogin: () => void;
@@ -81,7 +77,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         }, 600);
     };
 
-    const handleSignup = (e: React.FormEvent) => {
+    const handleSignup = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');
 
@@ -95,6 +91,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         }
 
         const users = getUsers();
+
         if (users.find((u) => u.username === signupUsername)) {
             setError('Username is already taken.');
             return;
@@ -105,11 +102,19 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         }
 
         setLoading(true);
-        setTimeout(() => {
-            saveUser({ username: signupUsername, email: signupEmail, passwordHash: simpleHash(signupPassword) });
+        try {
+            await axios.post("http://localhost:5000/api/users/signup", {
+                name: signupUsername,
+                email: signupEmail,
+                password: signupPassword
+            });
             setLoading(false);
-            setMode('success');
-        }, 600);
+            setMode("success");
+            setMessage(response.data.message);
+        } catch (error: any) {
+            setLoading(false);
+            setError("Signup failed: " + error.message);
+        }
     };
 
     const inputClass =
