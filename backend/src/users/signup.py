@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Blueprint
 from flask_cors import CORS
 from src.db import users_collection
 
@@ -16,3 +16,5 @@ def signup():
     }
     users_collection.insert_one(user)
     return jsonify({"message": "User registered successfully"})
+
+
