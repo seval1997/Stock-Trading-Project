@@ -10,7 +10,7 @@ def signup():
     data = request.json
     print(f"data = {data}")
     user = {
-        "name": data.get("name"),
+        "username": data.get("username"),
         "email": data.get("email"),
         "password": data.get("password")  # In production, hash the password!
     }
