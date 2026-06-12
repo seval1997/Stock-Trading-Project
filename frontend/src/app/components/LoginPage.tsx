@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { TrendingUp, Eye, EyeOff, Lock, User, Mail, CheckCircle } from 'lucide-react';
+import { mergeConfigs } from "tailwind-merge";
 
 const STORAGE_KEY = 'trading_dashboard_users';
 
@@ -59,22 +60,26 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         setMode(next);
     };
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
-        setError('');
         setLoading(true);
-        setTimeout(() => {
-            const users = getUsers();
-            const match = users.find(
-                (u) => u.username === loginUsername && u.passwordHash === simpleHash(loginPassword)
-            );
-            if (match) {
+        try {
+            const response = await axios.post("http://127.0.0.1:5000/api/users/login", {
+                username: loginUsername,
+                password: loginPassword
+            });
+            const message = response.data.message
+            console.error("Message:", message);
+            if (message == "Login successful") {
                 onLogin();
             } else {
-                setError('Invalid username or password.');
+                setError("Login failed: " + message);
             }
-            setLoading(false);
-        }, 600);
+        } catch (error: any) {
+            console.error("Login failed:", error);
+            setError("Login failed: " + error.message);
+        }
+        setLoading(false)
     };
 
     const handleSignup = async (e: React.FormEvent) => {
