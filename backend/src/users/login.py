@@ -11,10 +11,9 @@ def login():
     username = data.get("username")
     password = data.get("password")
     user = users_collection.find_one({"username": username})
-    if not user:
-        return jsonify({"message": "Invalid Username or Password"})
-    
-    if password == user["password"]:
-        return jsonify({"message": "Login successful"})
-    
-    return jsonify({"message": "Something went wrong"})
+    if user:
+        if password == user["password"]:
+            return jsonify({"message": "Login successful"})
+        else:
+            return jsonify({"message": "Invalid Username or Password"})
+    return jsonify({"message": "Invalid Username or Password"})
