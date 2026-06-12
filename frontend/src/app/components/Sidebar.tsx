@@ -31,9 +31,8 @@ export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange 
 
   return (
     <div
-      className={`relative h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] transition-all duration-300 flex flex-col ${
-        isCollapsed ? 'w-16' : 'w-64'
-      }`}
+      className={`relative h-full bg-[var(--color-surface)] border-r border-[var(--color-border)] transition-all duration-300 flex flex-col ${isCollapsed ? 'w-16' : 'w-64'
+        }`}
     >
       {/* Header */}
       <div className="h-16 flex items-center justify-between px-4 border-b border-[var(--color-border)]">
@@ -69,11 +68,10 @@ export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange 
               <button
                 key={item.id}
                 onClick={() => onTabChange(item.id)}
-                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
-                  isActive
-                    ? 'bg-blue-500 text-white'
-                    : 'hover:bg-[var(--color-muted)] text-[var(--color-text-secondary)]'
-                }`}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${isActive
+                  ? 'bg-blue-500 text-white'
+                  : 'hover:bg-[var(--color-muted)] text-[var(--color-text-secondary)]'
+                  }`}
                 title={isCollapsed ? item.label : undefined}
               >
                 <Icon className="w-5 h-5 flex-shrink-0" />
@@ -92,8 +90,8 @@ export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange 
               JD
             </div>
             <div className="flex-1 min-w-0">
-              <div className="font-medium text-sm truncate">John Doe</div>
-              <div className="text-xs text-[var(--color-text-secondary)] truncate">trader@example.com</div>
+              <div className="font-medium text-sm truncate">{localStorage.getItem("username")}</div>
+              <div className="text-xs text-[var(--color-text-secondary)] truncate">{localStorage.getItem("email")}</div>
             </div>
           </div>
         </div>

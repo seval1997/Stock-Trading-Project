@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { TrendingUp, Eye, EyeOff, Lock, User, Mail, CheckCircle } from 'lucide-react';
-import { mergeConfigs } from "tailwind-merge";
 
 const STORAGE_KEY = 'trading_dashboard_users';
 
@@ -69,8 +68,12 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
                 password: loginPassword
             });
             const message = response.data.message
-            console.error("Message:", message);
             if (message == "Login successful") {
+                const userDataApiResponse = await axios.get("http://127.0.0.1:5000/api/users/userData", {
+                    params: { username: "test" }   // pass username here
+                });
+                localStorage.setItem("username", userDataApiResponse.data['username']);
+                localStorage.setItem("email", userDataApiResponse.data['email']);
                 onLogin();
             } else {
                 setError("Login failed: " + message);
