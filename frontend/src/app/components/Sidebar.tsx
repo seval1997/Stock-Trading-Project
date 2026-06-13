@@ -87,7 +87,7 @@ export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange 
         <div className="p-4 border-t border-[var(--color-border)]">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white font-semibold">
-              JD
+              SP
             </div>
             <div className="flex-1 min-w-0">
               <div className="font-medium text-sm truncate">{localStorage.getItem("username")}</div>

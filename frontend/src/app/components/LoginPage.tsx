@@ -112,7 +112,7 @@ export default function LoginPage({ onLogin }: LoginPageProps) {
         setLoading(true);
         try {
             await axios.post("http://localhost:5000/api/users/signup", {
-                name: signupUsername,
+                username: signupUsername,
                 email: signupEmail,
                 password: signupPassword
             });
