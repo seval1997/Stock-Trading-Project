@@ -16,9 +16,10 @@ interface SidebarProps {
   onToggle: () => void;
   activeTab: string;
   onTabChange: (tab: string) => void;
+  onProfileClick: () => void;
 }
 
-export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange }: SidebarProps) {
+export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange, onProfileClick }: SidebarProps) {
   const menuItems = [
     { id: 'dashboard', icon: Home, label: 'Dashboard' },
     { id: 'markets', icon: TrendingUp, label: 'Markets' },
@@ -85,15 +86,20 @@ export default function Sidebar({ isCollapsed, onToggle, activeTab, onTabChange 
       {/* User Profile */}
       {!isCollapsed && (
         <div className="p-4 border-t border-[var(--color-border)]">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white font-semibold">
-              SP
+          <button
+            onClick={onProfileClick}
+            className="w-full flex items-center gap-3 rounded-lg px-2 py-1.5 hover:bg-[var(--color-muted)] transition-colors text-left"
+            title="View profile"
+          ><div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-blue-500 flex items-center justify-center text-white font-semibold">
+                SP
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="font-medium text-sm truncate">{localStorage.getItem("username")}</div>
+                <div className="text-xs text-[var(--color-text-secondary)] truncate">{localStorage.getItem("email")}</div>
+              </div>
             </div>
-            <div className="flex-1 min-w-0">
-              <div className="font-medium text-sm truncate">{localStorage.getItem("username")}</div>
-              <div className="text-xs text-[var(--color-text-secondary)] truncate">{localStorage.getItem("email")}</div>
-            </div>
-          </div>
+          </button>
         </div>
       )}
     </div>

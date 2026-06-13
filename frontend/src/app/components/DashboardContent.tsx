@@ -3,6 +3,7 @@ import Nifty50Widget from './Nifty50Widget';
 
 interface DashboardContentProps {
   onShowNiftyDetails?: () => void;
+  onShowUserProfilePage?: () => void;
 }
 
 export default function DashboardContent({ onShowNiftyDetails }: DashboardContentProps) {
