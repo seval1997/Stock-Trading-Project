@@ -53,6 +53,18 @@ def removeStockFromWatchList():
         return jsonify({"message": "{symbol} removed successfully"})
     else:
         return jsonify({"message": "{symbol} not present in the watchlist"})
+    
+
+@app.route("/getStockWatchList", methods=["POST"])
+def getStockFromWatchList():
+    data = request.json
+    username = data.get("username")
+    symbol = data.get("symbol")
+    stock_watchList = watchList_collection.find_one({"username": username})
+    if not stock_watchList:
+        return jsonify({"message": "not stock data found"})
+    else:
+        return jsonify({"watchlist": stock_watchList.get("watchlist")})
 
 def userExist(username: str) ->bool:
     user = watchList_collection.find_one({"usermame": username})
