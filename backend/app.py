@@ -19,6 +19,6 @@ app.add_url_rule("/api/users/userData", view_func=userData)
 app.add_url_rule("/api/users/addUserProfile", view_func=addUserProfile, methods=["POST"])
 app.add_url_rule("/api/stocks/addStockWatchList", view_func=addStockIntoWatchList, methods=["POST"])
 app.add_url_rule("/api/stocks/removeStockWatchList", view_func=removeStockFromWatchList, methods=["POST"])
-app.add_url_rule("/api/stocks/getStockWatchList",view_func=getStockFromWatchList, methods=["POST"])
+app.add_url_rule("/api/stocks//getStockWatchList",view_func=getStockFromWatchList, methods=["POST"])
 if __name__ == "__main__":
     app.run(debug=True)
