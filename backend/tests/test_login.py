@@ -51,9 +51,11 @@ class TestLogin:
         data = json.loads(response.data)
         assert data["message"] == "Invalid Username or Password"
 
-    def test_login_missing_fields(self, client):
-        """Login request missing username or password"""
+    @patch("src.users.login.users_collection.find_one")
+    def test_login_missing_fields(self, mock_find, client):
+        mock_find.return_value = None  # prevent DB call
         response = client.post("/api/users/login", json={"username": "test"})
         assert response.status_code == 200
-        data = json.loads(response.data)
+        data = response.get_json()
         assert data["message"] == "Invalid Username or Password"
+
